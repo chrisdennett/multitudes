@@ -5,9 +5,9 @@ import { Face } from "./Face";
 function App() {
   const svgWidth = 1000;
   const svgHeight = 850;
-  const padding = 10;
-  const faceWidth = 50;
-  const faceHeight = 50;
+  const faceWidth = 80;
+  const padding = faceWidth / 3;
+  const faceHeight = faceWidth;
   const boxW = faceWidth + padding * 2;
   const boxH = faceHeight + padding * 2;
   const cols = Math.floor(svgWidth / boxW);
@@ -19,6 +19,7 @@ function App() {
     for (let r = 0; r < rows; r++) {
       faces.push(
         <Face
+          key={c + "_" + r}
           w={faceWidth}
           h={faceHeight}
           x={padding + c * boxW}
