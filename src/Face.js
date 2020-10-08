@@ -5,6 +5,14 @@ function radians_to_degrees(radians) {
   return radians * (180 / pi);
 }
 
+const getRandomNumberBetween = (minMax) => {
+  const { min, max } = minMax;
+  const diff = max - min;
+  const rand = Math.random() * diff;
+
+  return min + rand;
+};
+
 export const Face = ({ w, h, x, y, targ }) => {
   const origW = 25.9;
   const origH = 23.8;
@@ -15,22 +23,22 @@ export const Face = ({ w, h, x, y, targ }) => {
   const origHeadWRadius = 10.5;
   //   const origHeadHRadius = 11.9;
 
-  const eyeMinMax = { min: 1.8, max: 3 };
-  const eyeRadius = eyeMinMax.max;
+  const eyeMinMax = { min: 2, max: 3.5 };
+  const eyeRadius = getRandomNumberBetween(eyeMinMax);
 
   const pupilMinMax = { min: 0.6, max: 1.1 };
-  const pupilRadius = pupilMinMax.max;
+  const pupilRadius = getRandomNumberBetween(pupilMinMax);
 
   const headRadiusWMinMax = { min: 8, max: 12 };
-  const headRadiusW = headRadiusWMinMax.max;
+  const headRadiusW = getRandomNumberBetween(headRadiusWMinMax);
   const ear1OffsetX = origHeadWRadius - headRadiusW;
   const ear2OffsetX = -ear1OffsetX;
 
-  const headRadiusHMinMax = { min: 10, max: 12 };
-  const headRadiusH = headRadiusHMinMax.max;
+  const headRadiusHMinMax = { min: 10, max: 11 };
+  const headRadiusH = getRandomNumberBetween(headRadiusHMinMax);
 
-  const mouthStart = { x: 8, y: 17.2 };
-  const mouthEnd = { x: 18.5, y: 17.8 };
+  const mouthStart = { x: 8 + Math.random(), y: 17.2 + Math.random() };
+  const mouthEnd = { x: 18.5 + Math.random(), y: 17.8 + Math.random() };
   const mouthPath = `
     M   ${mouthStart.x} ${mouthStart.y}, 
     S   9,              16.4
@@ -51,16 +59,15 @@ export const Face = ({ w, h, x, y, targ }) => {
 
   return (
     <>
-      {/* 
-      <line
+      {/* <line
         x1={targ.x}
         y1={targ.y}
         x2={middleX}
         y2={middleY}
         style={{ stroke: "rgba(0,0,0,0.1)", strokeWidth: 1 }}
       />
-      <ellipse cx={middleX} cy={middleY} fill="red" rx={5} ry={5} /> 
-      */}
+      <ellipse cx={middleX} cy={middleY} fill="red" rx={5} ry={5} /> */}
+
       <g transform={`translate(${x}, ${y})`}>
         <g
           transform={`scale(${scaleW}, ${scaleH}) `}
@@ -75,25 +82,13 @@ export const Face = ({ w, h, x, y, targ }) => {
             <ellipse cx="9.1" cy="10.4" rx={eyeRadius} ry={eyeRadius} />
 
             <g transform={`translate(9.1, 10.4) rotate(${angle})`}>
-              <ellipse
-                cx="0"
-                cy={pupilY}
-                fill="#000"
-                rx={pupilRadius}
-                ry={pupilRadius}
-              />
+              <ellipse cx="0" cy={pupilY} rx={pupilRadius} ry={pupilRadius} />
             </g>
           </g>
           <g id="eye2">
             <ellipse cx="17.1" cy="10.4" rx={eyeRadius} ry={eyeRadius} />
             <g transform={`translate(17.1, 10.4) rotate(${angle})`}>
-              <ellipse
-                cx="0"
-                cy={pupilY}
-                fill="#000"
-                rx={pupilRadius}
-                ry={pupilRadius}
-              />
+              <ellipse cx="0" cy={pupilY} rx={pupilRadius} ry={pupilRadius} />
             </g>
           </g>
 
