@@ -1,6 +1,13 @@
 import React from "react";
 
-export const Face = ({ w, h, x, y }) => {
+export const Face = ({
+  w,
+  h,
+  x,
+  y,
+  direction = 270,
+  lookStraighAhead = false,
+}) => {
   const origW = 25.9;
   const origH = 23.8;
 
@@ -11,7 +18,7 @@ export const Face = ({ w, h, x, y }) => {
   //   const origHeadHRadius = 11.9;
 
   const eyeMinMax = { min: 1.8, max: 3 };
-  const eyeRadius = eyeMinMax.min;
+  const eyeRadius = eyeMinMax.max;
 
   const pupilMinMax = { min: 0.6, max: 1.2 };
   const pupilRadius = pupilMinMax.min;
@@ -34,6 +41,8 @@ export const Face = ({ w, h, x, y }) => {
         17.5,            16.5
         ${mouthEnd.x}   ${mouthEnd.y}`;
 
+  const pupilY = lookStraighAhead ? 0 : 0 - eyeRadius / 2.5;
+
   return (
     <g transform={`translate(${x}, ${y})`}>
       <g
@@ -47,23 +56,28 @@ export const Face = ({ w, h, x, y }) => {
       >
         <g id="eye1">
           <ellipse cx="9.1" cy="10.4" rx={eyeRadius} ry={eyeRadius} />
-          <ellipse
-            cx="9.1"
-            cy="10.4"
-            fill="#000"
-            rx={pupilRadius}
-            ry={pupilRadius}
-          />
+
+          <g transform={`translate(9.1, 10.4) rotate(${direction})`}>
+            <ellipse
+              cx="0"
+              cy={pupilY}
+              fill="#000"
+              rx={pupilRadius}
+              ry={pupilRadius}
+            />
+          </g>
         </g>
         <g id="eye2">
           <ellipse cx="17.1" cy="10.4" rx={eyeRadius} ry={eyeRadius} />
-          <ellipse
-            cx="17.1"
-            cy="10.4"
-            fill="#000"
-            rx={pupilRadius}
-            ry={pupilRadius}
-          />
+          <g transform={`translate(17.1, 10.4) rotate(${direction})`}>
+            <ellipse
+              cx="0"
+              cy={pupilY}
+              fill="#000"
+              rx={pupilRadius}
+              ry={pupilRadius}
+            />
+          </g>
         </g>
 
         <g id="mouth">
