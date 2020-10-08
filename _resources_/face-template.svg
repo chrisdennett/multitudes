@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="face-template.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg865"
+   version="1.1"
+   viewBox="0 0 26.458326 24.341682"
+   height="24.341682mm"
+   width="26.458326mm">
+  <defs
+     id="defs859" />
+  <sodipodi:namedview
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     units="mm"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="-12.579465"
+     inkscape:cx="81.718574"
+     inkscape:zoom="3.8824582"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata862">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       id="eye1">
+      <ellipse
+         ry="2.5855896"
+         rx="2.4451251"
+         cy="10.408803"
+         cx="9.0544987"
+         id="path1430"
+         style="color:#000000;overflow:visible;fill:none;stroke:#000000;stroke-width:0.529168;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke" />
+      <ellipse
+         style="color:#000000;overflow:visible;fill:#000000;stroke:none;stroke-width:0.529169;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="ellipse1443"
+         cx="9.0544987"
+         cy="10.408803"
+         rx="1.0145162"
+         ry="1.0783714" />
+    </g>
+    <g
+       id="eye2">
+      <ellipse
+         ry="2.5855896"
+         rx="2.4451251"
+         cy="10.357961"
+         cx="17.136194"
+         id="ellipse1434"
+         style="color:#000000;overflow:visible;fill:none;stroke:#000000;stroke-width:0.529168;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke" />
+      <ellipse
+         style="color:#000000;overflow:visible;fill:#000000;stroke:none;stroke-width:0.529169;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="ellipse1445"
+         cx="17.136194"
+         cy="10.357961"
+         rx="1.1780144"
+         ry="1.2506249" />
+    </g>
+    <g
+       id="mouth">
+      <path
+         sodipodi:nodetypes="csc"
+         id="path1436"
+         d="m 7.890389,17.40004 c 0,0 0.934426,-0.62787 4.913757,-0.50667 4.004767,0.12198 5.506795,0.50667 5.506795,0.50667"
+         style="color:#000000;overflow:visible;fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke" />
+    </g>
+    <g
+       id="head">
+      <ellipse
+         ry="11.906688"
+         rx="10.505273"
+         cy="12.171269"
+         cx="13.227747"
+         id="path1428"
+         style="color:#000000;overflow:visible;fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke" />
+      <path
+         sodipodi:nodetypes="cccc"
+         d="m 26.19288,12.30018 c 0,1.42798 -1.09472,2.58559 -2.445125,2.58559 m 0,-5.17118 c 1.350407,0 2.445128,1.15761 2.445125,2.58559"
+         style="color:#000000;overflow:visible;fill:none;stroke:#000000;stroke-width:0.529168;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="ellipse1438" />
+      <path
+         id="path1441"
+         style="color:#000000;overflow:visible;fill:none;stroke:#000000;stroke-width:0.529168;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         d="m 0.264584,12.30018 c 1e-6,1.42798 1.094721,2.58559 2.445125,2.58559 m 0,-5.17118 c -1.350407,0 -2.445127,1.15761 -2.445125,2.58559"
+         sodipodi:nodetypes="cccc" />
+    </g>
+  </g>
+</svg>
