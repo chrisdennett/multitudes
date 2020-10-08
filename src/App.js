@@ -3,15 +3,17 @@ import "./App.css";
 import { Face } from "./Face";
 
 function App() {
-  const svgWidth = 1000;
+  const svgWidth = 850;
   const svgHeight = 850;
-  const faceWidth = 80;
+  const faceWidth = 60;
   const padding = faceWidth / 3;
   const faceHeight = faceWidth;
   const boxW = faceWidth + padding * 2;
   const boxH = faceHeight + padding * 2;
   const cols = Math.floor(svgWidth / boxW);
   const rows = Math.floor(svgHeight / boxH);
+
+  const targ = { x: boxW / 2, y: boxH / 2 };
 
   const faces = [];
 
@@ -20,6 +22,7 @@ function App() {
       faces.push(
         <Face
           key={c + "_" + r}
+          targ={targ}
           w={faceWidth}
           h={faceHeight}
           x={padding + c * boxW}
