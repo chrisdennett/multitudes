@@ -1,11 +1,18 @@
 import React from "react";
 import "./App.css";
 import { Face } from "./Face";
+// import useMouse from "@react-hook/mouse-position";
 
 function App() {
+  const ref = React.useRef(null);
+  // const mouse = useMouse(ref, {
+  //   enterDelay: 100,
+  //   leaveDelay: 100,
+  // });
+
   const svgWidth = 850;
   const svgHeight = 850;
-  const faceWidth = 60;
+  const faceWidth = 50;
   const padding = faceWidth / 3;
   const faceHeight = faceWidth;
   const boxW = faceWidth + padding * 2;
@@ -13,7 +20,7 @@ function App() {
   const cols = Math.floor(svgWidth / boxW);
   const rows = Math.floor(svgHeight / boxH);
 
-  const targ = { x: boxW / 2, y: boxH / 2 };
+  const targ = { x: 625, y: 222 };
 
   const faces = [];
 
@@ -33,7 +40,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div ref={ref}>
       <svg width={svgWidth} height={svgHeight}>
         {faces}
       </svg>

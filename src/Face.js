@@ -45,19 +45,22 @@ export const Face = ({ w, h, x, y, targ }) => {
 
   const angle =
     270 + radians_to_degrees(Math.atan2(middleY - targ.y, middleX - targ.x));
-  const lookStraighAhead = targ.x === middleX && targ.y === middleY;
+  const lookStraighAhead =
+    targ.x >= x && targ.x <= x + w && targ.y >= y && targ.y <= y + h;
   const pupilY = lookStraighAhead ? 0 : 0 - eyeRadius / 2;
 
   return (
     <>
-      {/* <line
+      {/* 
+      <line
         x1={targ.x}
         y1={targ.y}
         x2={middleX}
         y2={middleY}
         style={{ stroke: "rgba(0,0,0,0.1)", strokeWidth: 1 }}
       />
-      <ellipse cx={middleX} cy={middleY} fill="red" rx={5} ry={5} /> */}
+      <ellipse cx={middleX} cy={middleY} fill="red" rx={5} ry={5} /> 
+      */}
       <g transform={`translate(${x}, ${y})`}>
         <g
           transform={`scale(${scaleW}, ${scaleH}) `}
