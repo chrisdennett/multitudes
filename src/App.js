@@ -1,55 +1,97 @@
 import React from "react";
-import "./App.css";
-import { Face } from "./Face";
+import { saveAs } from "file-saver";
 import useMouse from "@react-hook/mouse-position";
+import TheMultitude from "./TheMultitude";
 
 function App() {
   const ref = React.useRef(null);
-  const mouse = useMouse(ref, {
-    enterDelay: 100,
-    leaveDelay: 100,
-  });
+  const mouse = useMouse(ref);
 
-  const svgWidth = 850;
+  const svgWidth = 1200;
   const svgHeight = 850;
-  const faceWidth = 60;
-  const padding = faceWidth / 5;
-  const faceHeight = faceWidth;
-  const boxW = faceWidth + padding * 2;
-  const boxH = faceHeight + padding * 2;
-  const cols = Math.floor(svgWidth / boxW);
-  const rows = Math.floor(svgHeight / boxH);
+  const faceWidth = 40;
+  const padding = faceWidth / 9;
 
   const useMouseTarg = false;
 
   const targ = useMouseTarg
     ? mouse
-    : { x: 2 * (boxW + padding), y: 4 * (boxH + padding) };
+    : { x: 14 * (faceWidth + padding), y: 8 * (faceWidth + padding) };
 
-  const faces = [];
-
-  for (let c = 0; c < cols; c++) {
-    for (let r = 0; r < rows; r++) {
-      faces.push(
-        <Face
-          key={c + "_" + r}
-          targ={targ}
-          w={faceWidth}
-          h={faceHeight}
-          x={padding + c * boxW}
-          y={padding + r * boxH}
-        />
-      );
-    }
-  }
+  const multitudeProps = { faceWidth, padding, svgWidth, svgHeight, targ };
+  const onSaveSvgClick = () => save_as_svg();
 
   return (
     <div ref={ref}>
-      <svg width={svgWidth} height={svgHeight}>
-        {faces}
+      <div>
+        <button onClick={onSaveSvgClick}>Save SVG</button>
+      </div>
+      <svg
+        id="svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width={svgWidth}
+        height={svgHeight}
+      >
+        <TheMultitude {...multitudeProps} />
       </svg>
     </div>
   );
 }
 
 export default App;
+
+const save_as_svg = () => {
+  var full_svg = get_svg_text();
+  var blob = new Blob([full_svg], { type: "image/svg+xml" });
+  saveAs(blob, "artfly-multitude.svg");
+};
+
+const get_svg_text = () => {
+  var svg_data = document.getElementById("svg")
+    ? document.getElementById("svg").outerHTML
+    : "waiting"; //put id of your svg element here
+
+  svg_data = svg_data.split(">").join(`>`);
+
+  return svg_data;
+};
+
+/*
+<filter
+  id="filter"
+  x="-20%"
+  y="-20%"
+  width="140%"
+  height="140%"
+  filterUnits="objectBoundingBox"
+  primitiveUnits="userSpaceOnUse"
+  colorInterpolationFilters="linearRGB"
+>
+  <feTurbulence
+    type="turbulence"
+    baseFrequency="0.15 0.05"
+    numOctaves="3"
+    seed="2"
+    stitchTiles="stitch"
+    x="0%"
+    y="0%"
+    width="100%"
+    height="100%"
+    result="turbulence"
+  />
+  <feDisplacementMap
+    in="SourceGraphic"
+    in2="turbulence"
+    scale="1.5"
+    xChannelSelector="R"
+    yChannelSelector="B"
+    x="0%"
+    y="0%"
+    width="100%"
+    height="100%"
+    result="displacementMap"
+  />
+</filter>
+
+
+*/

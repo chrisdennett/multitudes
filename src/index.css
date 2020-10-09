@@ -1,10 +1,12 @@
 body {
   margin: 0;
-  background: whitesmoke;
+  background: #feb300;
 }
 
 svg {
-  background: white;
+  /* background: whitesmoke; */
+  background: #feb300;
+  cursor: pointer;
   /* margin: 1vw;
   max-width: 94vw;
   max-height: 94vh;
