@@ -29,10 +29,11 @@
   <defs
      id="defs12979" />
   <sodipodi:namedview
-     inkscape:current-layer="layer2"
-     inkscape:cy="366.08181"
-     inkscape:cx="747.79956"
-     inkscape:zoom="0.66705882"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:cy="177.98995"
+     inkscape:cx="388.95181"
+     inkscape:zoom="0.94336363"
      inkscape:document-units="mm"
      inkscape:pagecheckerboard="true"
      units="mm"
@@ -18038,7 +18039,7 @@
        style="fill:none;stroke:#000000;stroke-width:1.61109;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke" />
   </g>
   <g
-     style="display:none"
+     style="display:inline"
      inkscape:label="Layer 2"
      id="layer2"
      inkscape:groupmode="layer">
@@ -18104,4 +18105,16 @@
        d="m 606.32921,368.2525 c 0,2.35294 -1.69884,4.36974 -3.861,4.36974 m 0,-8.73948 c 2.16216,0 3.861,2.0168 3.861,4.36974"
        id="path6732" />
   </g>
+  <WCB
+     layer="0"
+     node="0"
+     lastpath="0"
+     lastpathnc="0"
+     lastknownposx="0"
+     lastknownposy="0"
+     pausedposx="0"
+     pausedposy="0"
+     randseed="0"
+     row="0"
+     application="Axidraw" />
 </svg>
